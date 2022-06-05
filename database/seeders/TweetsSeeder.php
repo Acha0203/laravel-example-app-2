@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
+use App\Models\Tweet;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class TweetsSeeder extends Seeder
 {
@@ -15,10 +16,6 @@ class TweetsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tweets')->insert([
-            'content' => Str::random(100),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+        Tweet::factory()->count(10)->create();
     }
 }

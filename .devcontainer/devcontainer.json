@@ -1,16 +1,17 @@
 // https://aka.ms/devcontainer.json
 {
-	"name": "Laravel",
-	"dockerComposeFile": [
-		"../docker-compose.yml"
-	],
-	"service": "laravel.test",
-	"workspaceFolder": "/var/www/html",
-	"settings": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "junstyle.php-cs-fixer"
-    },
-	"extensions": [
+  "name": "Laravel",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "laravel.test",
+  "workspaceFolder": "/var/www/html",
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "junstyle.php-cs-fixer",
+    "php-cs-fixer.executablePath": "/var/www/html/vendor/bin/php-cs-fixer"
+  },
+  "extensions": [
     "mikestead.dotenv",
     "mhutchie.git-graph",
     "eamodio.gitlens",
@@ -23,10 +24,10 @@
     "github.copilot",
     "oderwat.indent-rainbow",
     "junstyle.php-cs-fixer"
-	],
-	"remoteUser": "sail"
-	// "forwardPorts": [],
-	// "runServices": [],
-	// "postCreateCommand": "apt-get update && apt-get install -y curl",
-	// "shutdownAction": "none",
+  ],
+  "remoteUser": "root"
+  // "forwardPorts": [],
+  // "runServices": [],
+  // "postCreateCommand": "apt-get update && apt-get install -y curl",
+  // "shutdownAction": "none",
 }
