@@ -13,7 +13,7 @@
         <form action="{{ route('tweet.create') }}" method="post">
             @csrf
             <label for="tweet-content">つぶやき</label>
-            <span>40文字まで</span>
+            <span>140文字まで</span>
             <textarea id="tweet-content" type="text" name="tweet" placeholder="つぶやきを入力"></textarea>
             @error('tweet')
                 <p style="color: red;">{{ $message }}</p>
@@ -23,7 +23,12 @@
     </div>
     <div>
     @foreach ($tweets as $tweet)
-        <p>{{ $tweet->content }}</p>
+        <details>
+            <summary>{{ $tweet->content }}</summary>
+            <div>
+                <a href="{{ route('tweet.update.index', ['tweetId' => $tweet->id]) }}">編集</a>
+            </div>
+        </details>
     @endforeach
     </div>
 </body>
